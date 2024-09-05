@@ -1,0 +1,367 @@
+#include <iostream>
+#include<conio.h>
+using namespace std;
+
+class quizGame
+{
+    int rightAns=0,wrongAns=0;
+    int score=0;
+
+public:
+    void playGame();
+    int checkAnswer(int, char);
+    void getScore();
+};
+
+void quizGame::playGame()
+{
+    char choose;
+    int check;
+    cout<<"Press any key to start game...";
+    getch();
+    cout << "\n\n1.Which data structure uses LIFO (Last In, First Out) principle?\n";
+    cout << "A.Queue\t\tB.Stack\n";
+    cout << "C.Array\t\tD.Linked List\n";
+repeat:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(1, choose);
+    if (!check)
+    {
+        goto repeat;
+    }
+    cout << "\n2.What is the purpose of a compiler?\n";
+    cout << "A.To execute code\t\tB.To interpret code\n";
+    cout << "C.To translate code\t\tD.To store code\n";
+repeat2:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(2, choose);
+    if (!check)
+    {
+        goto repeat2;
+    }
+    cout << "\n3.Which of the following is not a programming language?\n";
+    cout << "A.Python\t\tB.HTML\n";
+    cout << "C.Java\t\tD.C++\n";
+repeat3:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(3, choose);
+    if (!check)
+    {
+        goto repeat3;
+    }
+    cout << "\n4.In which type of loop does the condition check happen after the loop body is executed??\n";
+    cout << "A.Do-While loop\t\tB.While loop\n";
+    cout << "C.For loop\t\tD.Nested loop\n";
+repeat4:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(4, choose);
+    if (!check)
+    {
+        goto repeat4;
+    }
+    cout << "\n5.What does API stand for?\n";
+    cout << "A.Application Programming Interface\t\tB.Advanced Programming Interface\n";
+    cout << "C. Automated Programming Integration\t\tD. Application Programming Integration\n";
+repeat5:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(5, choose);
+    if (!check)
+    {
+        goto repeat5;
+    }
+    cout << "\n6. Which of the following is used to store a collection of items in a specific order?\n";
+    cout << "A.Stack\t\tB.Queue\n";
+    cout << "C.Array\t\tD.Graph\n";
+repeat6:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(6, choose);
+    if (!check)
+    {
+        goto repeat6;
+    }
+    cout << "\n7.What type of loop is guaranteed to execute at least once?\n";
+    cout << "A. For loop\t\tB. While loop\n";
+    cout << "C. Do-While loop\t\tD.Nested loop\n";
+repeat7:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(7, choose);
+    if (!check)
+    {
+        goto repeat7;
+    }
+    cout << "\n8.Which of the following is a high-level programming language?\n";
+    cout << "A.Assembly\t\tB.C++\n";
+    cout << "C.Machine Code\t\tD.Binary\n";
+repeat8:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(8, choose);
+    if (!check)
+    {
+        goto repeat8;
+    }
+    cout << "\n9.What does the return statement do in a function?\n";
+    cout << "A.Ends the program\t\tB.Exits the loop\n";
+    cout << "C.Sends a value back to the caller\t\tD.Stops the function\n";
+repeat9:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(9, choose);
+    if (!check)
+    {
+        goto repeat9;
+    }
+    cout << "\n10.What is the name of the process that optimizes code during compilation?\n";
+    cout << "A.Optimization\t\tB.Recursion\n";
+    cout << "C.Function\t\tD.Memory Management\n";
+repeat10:
+    cout << "Choose correct answer :";
+    cin >> choose;
+    check = checkAnswer(10, choose);
+    if (!check)
+    {
+        goto repeat10;
+    }
+    getScore();
+}
+
+int quizGame::checkAnswer(int quesNumber, char answer)
+{
+    switch (quesNumber)
+    {
+    case 1:
+        if (answer == 'B'||answer == 'b')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'A'||answer=='C'||answer=='D'||answer == 'a'||answer=='c'||answer=='d')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is Stack\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 2:
+        if (answer == 'C'||answer == 'c')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'A'||answer=='B'||answer=='D'||answer == 'a'||answer=='b'||answer=='d')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is To translate code\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 3:
+        if (answer == 'B'||answer == 'b')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'A'||answer=='C'||answer=='D'||answer == 'a'||answer=='c'||answer=='d')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is HTML\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 4:
+        if (answer == 'A'||answer == 'a')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;            
+            return 1;
+        }
+        else if (answer == 'C'||answer=='B'||answer=='D'||answer == 'c'||answer=='b'||answer=='d')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is Do-While loop\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 5:
+        if (answer == 'A'||answer == 'a')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'D'||answer=='B'||answer=='C'||answer == 'd'||answer=='b'||answer=='c')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is Application Programming Interface\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 6:
+        if (answer == 'C'||answer == 'c')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'A'||answer=='B'||answer=='D'||answer == 'a'||answer=='b'||answer=='d')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is Array\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 7:
+        if (answer == 'C'||answer == 'c')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'A'||answer=='B'||answer=='D'||answer == 'a'||answer=='b'||answer=='d')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is Do-While loop\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 8:
+        if (answer == 'B'||answer == 'b')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'A'||answer=='C'||answer=='D'||answer == 'a'||answer=='c'||answer=='d')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is C++\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 9:
+        if (answer == 'C'||answer == 'c')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'A'||answer=='D'||answer=='B'||answer == 'a'||answer=='d'||answer=='b')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is Sends a value back to the caller\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    case 10:
+        if (answer == 'A'||answer == 'a')
+        {
+            cout << "\nCorrect Answer\n";
+            rightAns++;
+            score +=10;
+            return 1;
+        }
+        else if (answer == 'A'||answer=='C'||answer=='D'||answer == 'a'||answer=='c'||answer=='d')
+        {
+            cout << "\nIncorrect Answer\n";
+            cout << "Correct Answer is Optimization\n";
+            wrongAns++;
+            return 1;
+        }else{
+            cout << "\nInvalid answer try again\n";
+            return 0;
+        }
+        break;
+    }
+    return 1;
+}
+
+void quizGame::getScore()
+{
+    cout<<"\nPress any key to show game result...";
+    getch();
+    if (rightAns>=4)
+    {
+        cout<<"\n\n*********************************************\n";
+        cout<<"|       Congrat's You win the Game          |\n";
+        cout<<"*********************************************\n";
+        cout<<"| Score | Correct Answer | Incorrect Answer |\n";
+        cout<<"*********************************************\n";
+        cout<<"| "<<score<<"    |       "<<rightAns<<"        |        "<<wrongAns<<"         |\n";
+        cout<<"*********************************************\n\n";
+    }else
+    {
+        cout<<"\n\n*********************************************\n";
+        cout<<"|         Sorry! You lose the Game          |\n";
+        cout<<"*********************************************\n";
+        cout<<"| Score | Correct Answer | Incorrect Answer |\n";
+        cout<<"*********************************************\n";
+        cout<<"| "<<score<<"    |       "<<rightAns<<"        |        "<<wrongAns<<"         |\n";
+        cout<<"*********************************************\n\n";
+    }    
+}
+
+int main()
+{
+    quizGame player;
+    cout << "\n\n****WELCOME TO QUIZ GAME PROJECT****\n";
+    cout<<"Here are few game rules\n";
+    cout<<"1.You will win the game if you answer 4 question correctly out of 10\n";
+    cout<<"2.You will get 10 score for every correct answer\n";
+    player.playGame();
+    return 0;
+}
